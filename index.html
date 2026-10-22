@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upeksha Cake - Custom Luxury Cakes & Confectionery</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            red: '#E50914',
+                            darkRed: '#B20710',
+                            crimson: '#800000',
+                            black: '#0D0D0D',
+                            cardBg: '#141414',
+                            charcoal: '#1E1E1E',
+                            gold: '#D4AF37'
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['Cinzel', 'serif'],
+                        body: ['Plus Jakarta Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0D0D0D;
+            color: #F5F5F5;
+        }
+        .font-heading {
+            font-family: 'Cinzel', serif;
+        }
+        .glow-red {
+            box-shadow: 0 0 25px rgba(229, 9, 20, 0.35);
+        }
+        .glow-red-sm {
+            box-shadow: 0 0 10px rgba(229, 9, 20, 0.25);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #FF4D4D 0%, #E50914 50%, #990000 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-gradient {
+            background: linear-gradient(135deg, #FFE259 0%, #FFA751 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glass-panel {
+            background: rgba(20, 20, 20, 0.75);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(229, 9, 20, 0.15);
+        }
+        .glass-card {
+            background: rgba(25, 25, 25, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover {
+            border-color: rgba(229, 9, 20, 0.5);
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(229, 9, 20, 0.25);
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0D0D0D;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #E50914;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #B20710;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-red selection:text-white overflow-x-hidden">
+
+    <!-- Navigation Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-panel border-b border-brand-red/20 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#home" class="flex items-center gap-3 group">
+                <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-brand-crimson to-brand-red p-[2px] shadow-lg shadow-brand-red/30">
+                    <div class="w-full h-full bg-brand-black rounded-full flex items-center justify-center border border-white/10 group-hover:bg-brand-red/20 transition-all">
+                        <i class="fa-solid font-heading text-brand-red text-xl font-bold">U</i>
+                    </div>
+                </div>
+                <div>
+                    <span class="font-heading text-2xl font-bold tracking-wider text-white block leading-tight">UPEKSHA<span class="text-brand-red">.</span></span>
+                    <span class="text-[10px] tracking-[0.3em] text-gray-400 uppercase font-semibold">Luxury Cake Studio</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#home" class="text-sm font-medium hover:text-brand-red transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-brand-red hover:after:w-full after:transition-all">Home</a>
+                <a href="#varieties" class="text-sm font-medium hover:text-brand-red transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-brand-red hover:after:w-full after:transition-all">Our Cakes</a>
+                <a href="#calculator" class="text-sm font-medium hover:text-brand-red transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-brand-red hover:after:w-full after:transition-all">Price Calculator</a>
+                <a href="#about" class="text-sm font-medium hover:text-brand-red transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-brand-red hover:after:w-full after:transition-all">About Upeksha</a>
+                <a href="#contact" class="text-sm font-medium hover:text-brand-red transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-brand-red hover:after:w-full after:transition-all">Contact</a>
+            </nav>
+
+            <!-- Action Buttons & Admin Trigger -->
+            <div class="flex items-center gap-3">
+                <button onclick="toggleAdminPanel()" class="px-4 py-2 text-xs font-semibold uppercase tracking-wider bg-zinc-900 border border-brand-red/40 hover:border-brand-red text-white rounded-lg transition-all flex items-center gap-2 hover:bg-brand-red/10">
+                    <i class="fa-solid fa-sliders text-brand-red"></i>
+                    <span class="hidden sm:inline">C-Panel</span>
+                </button>
+                <a href="#varieties" class="px-5 py-2.5 rounded-lg bg-gradient-to-r from-brand-red to-brand-darkRed hover:from-brand-darkRed hover:to-brand-red text-white font-medium text-sm shadow-lg shadow-brand-red/30 transition-all hover:scale-105 active:scale-95">
+                    Order Now
+                </a>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="md:hidden p-2 text-gray-300 hover:text-white">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Nav Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-black/95 border-b border-brand-red/20 px-4 pt-2 pb-6 space-y-3">
+            <a href="#home" onclick="toggleMobileMenu()" class="block py-2 text-gray-300 hover:text-brand-red">Home</a>
+            <a href="#varieties" onclick="toggleMobileMenu()" class="block py-2 text-gray-300 hover:text-brand-red">Our Cakes</a>
+            <a href="#calculator" onclick="toggleMobileMenu()" class="block py-2 text-gray-300 hover:text-brand-red">Price Calculator</a>
+            <a href="#about" onclick="toggleMobileMenu()" class="block py-2 text-gray-300 hover:text-brand-red">About Upeksha</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="block py-2 text-gray-300 hover:text-brand-red">Contact</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen pt-28 pb-16 flex items-center overflow-hidden">
+        <!-- Background Ambient Lighting -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-brand-red/15 rounded-full blur-[140px] pointer-events-none"></div>
+        <div class="absolute bottom-10 right-10 w-96 h-96 bg-brand-crimson/20 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-red/10 border border-brand-red/30 text-brand-red text-xs font-semibold tracking-wide uppercase">
+                        <i class="fa-solid fa-crown text-brand-gold"></i> Premium Custom Cake Designer
+                    </div>
+
+                    <h1 class="font-heading text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-none">
+                        Crafting <span class="text-gradient">Edible Masterpieces</span> For Your Special Moments.
+                    </h1>
+
+                    <p class="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
+                        Welcome to <strong class="text-white font-semibold">Upeksha Cake Studio</strong>. We specialize in bespoke wedding cakes, birthday marvels, and luxurious dessert tables crafted with unmatched passion and premium ingredients.
+                    </p>
+
+                    <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="#varieties" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-brand-red to-brand-darkRed hover:from-brand-darkRed hover:to-brand-red text-white font-semibold text-base shadow-xl shadow-brand-red/30 transition-all hover:scale-105 flex items-center justify-center gap-3">
+                            <span>Explore Cake Menu</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="https://wa.me/94771234567?text=Hi%20Upeksha%20Cake,%20I%20would%20like%20to%20inquire%20about%20a%20custom%20cake!" target="_blank" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-zinc-900/90 hover:bg-zinc-800 border border-zinc-700 text-white font-semibold text-base transition-all flex items-center justify-center gap-3">
+                            <i class="fa-brands fa-whatsapp text-emerald-500 text-xl"></i>
+                            <span>Direct WhatsApp</span>
+                        </a>
+                    </div>
+
+                    <!-- Key Metrics -->
+                    <div class="pt-8 grid grid-cols-3 gap-4 border-t border-zinc-800 max-w-lg mx-auto lg:mx-0">
+                        <div>
+                            <p class="font-heading text-2xl sm:text-3xl font-bold text-white">500+</p>
+                            <p class="text-xs text-gray-400">Happy Celebrations</p>
+                        </div>
+                        <div>
+                            <p class="font-heading text-2xl sm:text-3xl font-bold text-brand-red">100%</p>
+                            <p class="text-xs text-gray-400">Handcrafted</p>
+                        </div>
+                        <div>
+                            <p class="font-heading text-2xl sm:text-3xl font-bold text-white">4.9 ★</p>
+                            <p class="text-xs text-gray-400">Customer Rating</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Hero Image Showcase -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <!-- Red Accent Frame -->
+                        <div class="absolute -inset-1.5 bg-gradient-to-r from-brand-red to-brand-crimson rounded-3xl blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
+                        
+                        <div class="relative bg-brand-cardBg rounded-3xl overflow-hidden border border-brand-red/30 p-3">
+                            <img id="hero-display-img" src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&q=80&w=1000" alt="Signature Luxury Red Cake" class="w-full h-[420px] sm:h-[480px] object-cover rounded-2xl">
+                            
+                            <!-- Floating Badge -->
+                            <div class="absolute bottom-6 left-6 right-6 p-4 rounded-xl glass-panel border border-white/10 flex items-center justify-between">
+                                <div>
+                                    <p class="text-xs text-brand-red font-bold uppercase tracking-wider">Signature Creation</p>
+                                    <p id="hero-cake-title" class="text-white font-heading font-semibold text-lg">Velvet Royal Empress</p>
+                                </div>
+                                <span class="px-3 py-1 rounded-full bg-brand-red text-white font-bold text-xs">Fresh Daily</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Cake Varieties & Sales Section -->
+    <section id="varieties" class="py-20 relative bg-brand-black/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-12">
+                <span class="text-brand-red font-bold text-xs uppercase tracking-widest px-3 py-1 rounded-full bg-brand-red/10 border border-brand-red/20">Our Handcrafted Selection</span>
+                <h2 class="font-heading text-3xl sm:text-5xl font-bold text-white">Popular Cake Varieties</h2>
+                <p class="text-gray-400 text-sm sm:text-base">Explore our curated collection of delicious, tailor-made cakes. Select your choice to order directly via WhatsApp or customize!</p>
+            </div>
+
+            <!-- Category Filter Buttons -->
+            <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-10" id="category-filters">
+                <!-- Dynamically populated or static filters -->
+                <button onclick="filterCakes('all')" class="category-btn active px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all bg-brand-red text-white shadow-lg shadow-brand-red/30">All Cakes</button>
+                <button onclick="filterCakes('wedding')" class="category-btn px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all bg-zinc-900 border border-zinc-800 text-gray-300 hover:border-brand-red">Wedding</button>
+                <button onclick="filterCakes('birthday')" class="category-btn px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all bg-zinc-900 border border-zinc-800 text-gray-300 hover:border-brand-red">Birthday</button>
+                <button onclick="filterCakes('chocolate')" class="category-btn px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all bg-zinc-900 border border-zinc-800 text-gray-300 hover:border-brand-red">Chocolate Lovers</button>
+                <button onclick="filterCakes('custom')" class="category-btn px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all bg-zinc-900 border border-zinc-800 text-gray-300 hover:border-brand-red">Custom Theme</button>
+            </div>
+
+            <!-- Cake Grid Container -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="cake-grid">
+                <!-- Items populated via JavaScript dynamically -->
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Interactive Price Estimator -->
+    <section id="calculator" class="py-20 relative border-y border-zinc-800/80 bg-zinc-950">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass-panel rounded-3xl p-6 sm:p-10 border border-brand-red/20 shadow-2xl relative overflow-hidden">
+                <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-brand-red/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                <div class="grid lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-5 space-y-4">
+                        <span class="text-brand-red text-xs font-bold uppercase tracking-widest">Instant Estimate</span>
+                        <h3 class="font-heading text-2xl sm:text-4xl font-bold text-white">Custom Cake Price Calculator</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Select your desired cake specifications to calculate an approximate price instantly and place a order quick request.</p>
+                        
+                        <div class="p-4 rounded-xl bg-brand-black/60 border border-zinc-800 text-xs text-gray-400 space-y-2">
+                            <p><i class="fa-solid fa-circle-info text-brand-red mr-1.5"></i> Final prices may vary based on intricate fondant work or special imported toppings.</p>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-7 space-y-5 bg-brand-black/80 p-6 rounded-2xl border border-zinc-800">
+                        <!-- Flavor Selection -->
+                        <div>
+                            <label class="block text-xs font-semibold uppercase text-gray-300 mb-2">1. Select Cake Flavor</label>
+                            <select id="calc-flavor" onchange="calculateCakePrice()" class="w-full bg-zinc-900 border border-zinc-700 text-white rounded-lg p-3 text-sm focus:border-brand-red focus:outline-none">
+                                <option value="3500">Ribbon / Sponge Cake (Rs. 3,500 / KG)</option>
+                                <option value="4200" selected>Rich Dark Chocolate Fudge (Rs. 4,200 / KG)</option>
+                                <option value="4800">Red Velvet Cream Cheese (Rs. 4,800 / KG)</option>
+                                <option value="5500">Premium Royal Fruit Cake (Rs. 5,500 / KG)</option>
+                            </select>
+                        </div>
+
+                        <!-- Weight Selection Slider -->
+                        <div>
+                            <div class="flex justify-between text-xs font-semibold uppercase text-gray-300 mb-2">
+                                <span>2. Cake Weight (KG)</span>
+                                <span id="calc-weight-val" class="text-brand-red font-bold">1.5 KG</span>
+                            </div>
+                            <input type="range" id="calc-weight" min="1" max="10" step="0.5" value="1.5" oninput="calculateCakePrice()" class="w-full accent-brand-red cursor-pointer h-2 bg-zinc-800 rounded-lg">
+                        </div>
+
+                        <!-- Tier Options -->
+                        <div>
+                            <label class="block text-xs font-semibold uppercase text-gray-300 mb-2">3. Structure / Tiers</label>
+                            <div class="grid grid-cols-3 gap-3">
+                                <button type="button" onclick="setCalcTier(0, this)" class="tier-btn active bg-brand-red text-white py-2 rounded-lg text-xs font-semibold">1 Tier</button>
+                                <button type="button" onclick="setCalcTier(1500, this)" class="tier-btn bg-zinc-900 text-gray-300 border border-zinc-800 py-2 rounded-lg text-xs font-semibold hover:border-brand-red">2 Tiers (+Rs. 1,500)</button>
+                                <button type="button" onclick="setCalcTier(3500, this)" class="tier-btn bg-zinc-900 text-gray-300 border border-zinc-800 py-2 rounded-lg text-xs font-semibold hover:border-brand-red">3 Tiers (+Rs. 3,500)</button>
+                            </div>
+                        </div>
+
+                        <!-- Estimated Total Box -->
+                        <div class="pt-4 border-t border-zinc-800 flex items-center justify-between">
+                            <div>
+                                <p class="text-xs text-gray-400">Estimated Cost</p>
+                                <p class="font-heading text-2xl sm:text-3xl font-extrabold text-brand-red" id="calc-total">Rs. 6,300.00</p>
+                            </div>
+                            <button onclick="orderCalculatedCake()" class="px-6 py-3 rounded-xl bg-brand-red hover:bg-brand-darkRed text-white font-semibold text-sm transition-all shadow-lg shadow-brand-red/30 flex items-center gap-2">
+                                <i class="fa-brands fa-whatsapp text-lg"></i>
+                                <span>Order This</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Upeksha Section -->
+    <section id="about" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Chef Portrait / Image Grid -->
+                <div class="lg:col-span-5">
+                    <div class="relative">
+                        <div class="w-full h-[450px] rounded-3xl overflow-hidden border border-brand-red/30 relative">
+                            <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&q=80&w=800" alt="Master Baker at Work" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-transparent to-transparent"></div>
+                        </div>
+                        
+                        <!-- Floating Quote Box -->
+                        <div class="absolute -bottom-6 -right-4 sm:right-6 max-w-xs p-4 glass-panel rounded-2xl border border-brand-red/40 shadow-2xl">
+                            <i class="fa-solid fa-quote-left text-brand-red text-2xl mb-1"></i>
+                            <p class="text-xs text-gray-200 italic">"Every cake has a story to tell. We craft that story in sugar, passion, and elegance."</p>
+                            <p class="text-[11px] text-brand-red font-bold mt-2">— Upeksha, Founder</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text Info -->
+                <div class="lg:col-span-7 space-y-6">
+                    <span class="text-brand-red font-bold text-xs uppercase tracking-widest px-3 py-1 rounded-full bg-brand-red/10 border border-brand-red/20">The Passion Behind The Taste</span>
+                    <h2 class="font-heading text-3xl sm:text-5xl font-bold text-white">Baking Perfection with Artistry & Heart</h2>
+                    
+                    <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
+                        At <strong class="text-white">Upeksha Cake</strong>, we believe cakes are more than just desserts—they are the centerpiece of your life’s happiest celebrations. Founded by professional pastry artist Upeksha, our studio is dedicated to delivering mouthwatering flavors wrapped in breathtaking visual designs.
+                    </p>
+
+                    <div class="grid sm:grid-cols-2 gap-4 pt-2">
+                        <div class="p-4 rounded-xl bg-zinc-900/80 border border-zinc-800">
+                            <i class="fa-solid fa-wand-magic-sparkles text-brand-red text-xl mb-2"></i>
+                            <h4 class="text-white font-semibold text-sm">100% Custom Designs</h4>
+                            <p class="text-xs text-gray-400 mt-1">Bring your theme, and we'll transform it into edible fine art.</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-zinc-900/80 border border-zinc-800">
+                            <i class="fa-solid fa-seedling text-brand-red text-xl mb-2"></i>
+                            <h4 class="text-white font-semibold text-sm">Premium Ingredients</h4>
+                            <p class="text-xs text-gray-400 mt-1">Finest Belgian cocoa, real butter, and top quality toppings.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-zinc-950 border-t border-zinc-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-10">
+                
+                <!-- Contact Information -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div>
+                        <span class="text-brand-red text-xs font-bold uppercase tracking-widest">Get In Touch</span>
+                        <h2 class="font-heading text-3xl font-bold text-white mt-1">Book Your Custom Cake</h2>
+                    </div>
+                    <p class="text-gray-400 text-sm">Have a special design in mind? Reach out to us for custom quotes, tasting appointments, or date availability.</p>
+
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4 p-4 rounded-xl bg-zinc-900 border border-zinc-800">
+                            <div class="w-10 h-10 rounded-lg bg-brand-red/20 text-brand-red flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-400">Phone / Hotline</p>
+                                <p class="text-white font-medium text-sm">+94 77 123 4567 / +94 71 987 6543</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 p-4 rounded-xl bg-zinc-900 border border-zinc-800">
+                            <div class="w-10 h-10 rounded-lg bg-brand-red/20 text-brand-red flex items-center justify-center shrink-0">
+                                <i class="fa-brands fa-whatsapp text-lg"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-400">WhatsApp Direct Order</p>
+                                <p class="text-white font-medium text-sm">+94 77 123 4567</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 p-4 rounded-xl bg-zinc-900 border border-zinc-800">
+                            <div class="w-10 h-10 rounded-lg bg-brand-red/20 text-brand-red flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-400">Cake Studio Location</p>
+                                <p class="text-white font-medium text-sm">High Level Road, Maharagama, Sri Lanka</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Custom Order Quick Form -->
+                <div class="lg:col-span-7 glass-panel p-6 sm:p-8 rounded-3xl border border-brand-red/20">
+                    <h3 class="font-heading text-xl font-bold text-white mb-4">Send a Direct Inquiry</h3>
+                    <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs text-gray-400 mb-1">Your Name</label>
+                                <input type="text" id="cust-name" required placeholder="Nimal Perera" class="w-full bg-zinc-900 border border-zinc-800 rounded-lg p-3 text-sm text-white focus:border-brand-red focus:outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-xs text-gray-400 mb-1">Phone / WhatsApp No</label>
+                                <input type="tel" id="cust-phone" required placeholder="0771234567" class="w-full bg-zinc-900 border border-zinc-800 rounded-lg p-3 text-sm text-white focus:border-brand-red focus:outline-none">
+                            </div>
+                        </div>
+
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs text-gray-400 mb-1">Event Date</label>
+                                <input type="date" id="cust-date" required class="w-full bg-zinc-900 border border-zinc-800 rounded-lg p-3 text-sm text-white focus:border-brand-red focus:outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-xs text-gray-400 mb-1">Occasion Type</label>
+                                <select id="cust-occasion" class="w-full bg-zinc-900 border border-zinc-800 rounded-lg p-3 text-sm text-white focus:border-brand-red focus:outline-none">
+                                    <option>Birthday Party</option>
+                                    <option>Wedding Celebration</option>
+                                    <option>Anniversary</option>
+                                    <option>Corporate Event</option>
+                                    <option>Other Custom Request</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs text-gray-400 mb-1">Cake Details & Preferences</label>
+                            <textarea id="cust-msg" rows="3" placeholder="Tell us about your theme, flavor preferences or specific design requests..." class="w-full bg-zinc-900 border border-zinc-800 rounded-lg p-3 text-sm text-white focus:border-brand-red focus:outline-none"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-brand-red to-brand-darkRed text-white font-semibold text-sm shadow-lg shadow-brand-red/30 hover:scale-[1.01] transition-all flex items-center justify-center gap-2">
+                            <i class="fa-paper-plane fa-solid"></i>
+                            <span>Send Inquiry via WhatsApp</span>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-brand-black border-t border-zinc-900 text-center text-xs text-gray-500">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p>© 2026 Upeksha Cake Studio. All Rights Reserved.</p>
+            <div class="flex space-x-4 text-base text-gray-400">
+                <a href="#" class="hover:text-brand-red"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" class="hover:text-brand-red"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="hover:text-brand-red"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="#" class="hover:text-brand-red"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========================================== -->
+    <!-- ADMIN CONTROL PANEL MODAL (NO URL REQUIRED) -->
+    <!-- ========================================== -->
+    <div id="admin-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-zinc-950 border border-brand-red/40 w-full max-w-4xl rounded-3xl shadow-2xl overflow-hidden my-8">
+            
+            <!-- Modal Header -->
+            <div class="bg-zinc-900 px-6 py-4 border-b border-zinc-800 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="w-3 h-3 rounded-full bg-brand-red animate-ping"></div>
+                    <h3 class="font-heading font-bold text-white text-lg">Upeksha Cake - Admin C-Panel</h3>
+                </div>
+                <button onclick="toggleAdminPanel()" class="text-gray-400 hover:text-white text-xl">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <!-- Modal Content Tabs -->
+            <div class="p-6 space-y-6 max-h-[80vh] overflow-y-auto">
+                
+                <!-- Add / Edit Cake Item Form -->
+                <div class="bg-zinc-900/90 p-5 rounded-2xl border border-zinc-800 space-y-4">
+                    <div class="flex justify-between items-center">
+                        <h4 class="text-sm font-bold uppercase text-brand-red tracking-wider" id="form-title">Add New Cake Variety</h4>
+                        <span class="text-xs text-gray-400">Local Image Change Supported</span>
+                    </div>
+
+                    <form id="cake-admin-form" onsubmit="saveCakeItem(event)" class="space-y-4">
+                        <input type="hidden" id="edit-cake-id" value="">
+
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs text-gray-300 mb-1">Cake Name *</label>
+                                <input type="text" id="admin-cake-title" required placeholder="e.g. Red Velvet Deluxe" class="w-full bg-zinc-950 border border-zinc-800 rounded-lg p-2.5 text-xs text-white focus:border-brand-red focus:outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-xs text-gray-300 mb-1">Category *</label>
+                                <select id="admin-cake-category" class="w-full bg-zinc-950 border border-zinc-800 rounded-lg p-2.5 text-xs text-white focus:border-brand-red focus:outline-none">
+                                    <option value="wedding">Wedding Cake</option>
+                                    <option value="birthday">Birthday Cake</option>
+                                    <option value="chocolate">Chocolate Lovers</option>
+                                    <option value="custom">Custom Theme</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs text-gray-300 mb-1">Price (Rs.) *</label>
+                                <input type="number" id="admin-cake-price" required placeholder="5500" class="w-full bg-zinc-950 border border-zinc-800 rounded-lg p-2.5 text-xs text-white focus:border-brand-red focus:outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-xs text-gray-300 mb-1">Tag / Badge (Optional)</label>
+                                <input type="text" id="admin-cake-badge" placeholder="e.g. Best Seller, New, Popular" class="w-full bg-zinc-950 border border-zinc-800 rounded-lg p-2.5 text-xs text-white focus:border-brand-red focus:outline-none">
+                            </div>
+                        </div>
+
+                        <!-- LOCAL IMAGE FILE UPLOAD (URL NOT NEEDED) -->
+                        <div class="p-4 bg-zinc-950 rounded-xl border border-dashed border-zinc-700 space-y-2">
+                            <label class="block text-xs font-semibold text-brand-red">Cake Image Selection (Local Upload or URL)</label>
+                            
+                            <div class="grid sm:grid-cols-2 gap-3 items-center">
+                                <div>
+                                    <span class="text-[11px] text-gray-400 block mb-1">Option A: Select Image File From Device</span>
+                                    <input type="file" id="admin-cake-file" accept="image/*" onchange="previewLocalImage(event)" class="text-xs text-gray-400 file:mr-3 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-brand-red file:text-white hover:file:bg-brand-darkRed">
+                                </div>
+                                <div>
+                                    <span class="text-[11px] text-gray-400 block mb-1">Option B: Paste Image Web URL</span>
+                                    <input type="text" id="admin-cake-url" placeholder="https://..." class="w-full bg-zinc-900 border border-zinc-800 rounded-lg p-2 text-xs text-white focus:border-brand-red focus:outline-none">
+                                </div>
+                            </div>
+
+                            <!-- Image Preview Box -->
+                            <div id="image-preview-container" class="hidden mt-2 flex items-center gap-3 bg-zinc-900 p-2 rounded-lg border border-zinc-800">
+                                <img id="image-preview-img" src="" alt="Preview" class="w-12 h-12 object-cover rounded-md">
+                                <span class="text-xs text-emerald-400"><i class="fa-solid fa-check"></i> Image selected!</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs text-gray-300 mb-1">Short Description</label>
+                            <textarea id="admin-cake-desc" rows="2" placeholder="Delicious layers with rich cocoa and fondant finish..." class="w-full bg-zinc-950 border border-zinc-800 rounded-lg p-2.5 text-xs text-white focus:border-brand-red focus:outline-none"></textarea>
+                        </div>
+
+                        <div class="flex justify-end gap-3">
+                            <button type="button" onclick="resetAdminForm()" class="px-4 py-2 rounded-lg text-xs bg-zinc-800 text-gray-300 hover:bg-zinc-700">Cancel / Reset</button>
+                            <button type="submit" class="px-6 py-2 rounded-lg text-xs bg-brand-red hover:bg-brand-darkRed text-white font-semibold">Save Cake Item</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Existing Items Management Table -->
+                <div class="space-y-3">
+                    <h4 class="text-sm font-bold uppercase text-gray-300">Manage Active Cake Menu</h4>
+                    
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-xs text-gray-300">
+                            <thead class="bg-zinc-900 text-gray-400 uppercase text-[10px]">
+                                <tr>
+                                    <th class="p-3">Image</th>
+                                    <th class="p-3">Name</th>
+                                    <th class="p-3">Category</th>
+                                    <th class="p-3">Price</th>
+                                    <th class="p-3 text-right">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="admin-cake-table-body" class="divide-y divide-zinc-800 bg-zinc-950">
+                                <!-- JS Populated Table Rows -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 px-5 py-3 rounded-xl bg-zinc-900 border border-brand-red text-white text-xs shadow-2xl flex items-center gap-3 transform translate-y-20 opacity-0 transition-all duration-300">
+        <i class="fa-solid fa-circle-check text-brand-red text-base"></i>
+        <span id="toast-msg">Action updated successfully!</span>
+    </div>
+
+    <!-- JavaScript Application Logic -->
+    <script>
+        // Default Initial Cake Data
+        const initialCakes = [
+            {
+                id: 'cake-1',
+                title: 'Royal Red Velvet Fantasy',
+                category: 'birthday',
+                price: 4800,
+                badge: 'Best Seller',
+                image: 'https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?auto=format&fit=crop&q=80&w=800',
+                desc: 'Luxurious red velvet layers paired with silky cream cheese frosting and rich chocolate drips.'
+            },
+            {
+                id: 'cake-2',
+                title: 'Elegant Tiered Wedding Cake',
+                category: 'wedding',
+                price: 18500,
+                badge: 'Premium',
+                image: 'https://images.unsplash.com/photo-1535141192574-5d4897c13136?auto=format&fit=crop&q=80&w=800',
+                desc: '3-Tiered handcrafted fondant elegance with delicate sugar flowers and vanilla bean flavor.'
+            },
+            {
+                id: 'cake-3',
+                title: 'Triple Dark Chocolate Fudge',
+                category: 'chocolate',
+                price: 5200,
+                badge: 'Must Try',
+                image: 'https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?auto=format&fit=crop&q=80&w=800',
+                desc: 'Intense 70% Belgian chocolate sponge layered with decadent ganache and dark chocolate shavings.'
+            },
+            {
+                id: 'cake-4',
+                title: 'Custom Cartoon Theme Cake',
+                category: 'custom',
+                price: 6500,
+                badge: 'Kids Special',
+                image: 'https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&q=80&w=800',
+                desc: 'Vibrant custom themed birthday cake crafted meticulously with edible toppers and sugar figures.'
+            },
+            {
+                id: 'cake-5',
+                title: 'Classic Strawberry Gateau',
+                category: 'birthday',
+                price: 4200,
+                badge: 'Fresh',
+                image: 'https://images.unsplash.com/photo-1562440499-64c9a111f713?auto=format&fit=crop&q=80&w=800',
+                desc: 'Light fluffy sponge filled with fresh strawberry compote and whipped vanilla cream.'
+            },
+            {
+                id: 'cake-6',
+                title: 'Golden Floral Wedding Creation',
+                category: 'wedding',
+                price: 22000,
+                badge: 'Luxury',
+                image: 'https://images.unsplash.com/photo-1519869325930-281384150729?auto=format&fit=crop&q=80&w=800',
+                desc: 'Opulent gold leaf accents with custom sugar florals and rich fruit cake interior.'
+            }
+        ];
+
+        // Global State
+        let cakesData = [];
+        let currentLocalImageBase64 = '';
+        let currentAddTierPrice = 0;
+
+        // Initialize Application
+        window.addEventListener('DOMContentLoaded', () => {
+            loadCakesFromStorage();
+            renderCakeGrid(cakesData);
+            renderAdminTable();
+            calculateCakePrice();
+        });
+
+        // Load or Save LocalStorage
+        function loadCakesFromStorage() {
+            const stored = localStorage.getItem('upeksha_cakes');
+            if (stored) {
+                cakesData = JSON.parse(stored);
+            } else {
+                cakesData = initialCakes;
+                saveToStorage();
+            }
+        }
+
+        function saveToStorage() {
+            localStorage.setItem('upeksha_cakes', JSON.stringify(cakesData));
+        }
+
+        // Render Cake Grid
+        function renderCakeGrid(items) {
+            const grid = document.getElementById('cake-grid');
+            grid.innerHTML = '';
+
+            if (items.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full text-center py-12 text-gray-500">
+                        <i class="fa-solid fa-cake-candles text-4xl mb-3 text-brand-red"></i>
+                        <p class="text-sm">No cake items found in this category.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            items.forEach(cake => {
+                const card = document.createElement('div');
+                card.className = 'glass-card rounded-2xl overflow-hidden flex flex-col justify-between group';
+                
+                card.innerHTML = `
+                    <div>
+                        <!-- Image Container -->
+                        <div class="relative h-60 overflow-hidden bg-zinc-900">
+                            <img src="${cake.image}" alt="${cake.title}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/141414/E50914?text=Upeksha+Cake'">
+                            ${cake.badge ? `<span class="absolute top-3 left-3 bg-brand-red/90 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-md">${cake.badge}</span>` : ''}
+                        </div>
+
+                        <!-- Card Body -->
+                        <div class="p-5 space-y-3">
+                            <div class="flex justify-between items-start gap-2">
+                                <h3 class="font-heading font-bold text-white text-lg group-hover:text-brand-red transition-colors">${cake.title}</h3>
+                            </div>
+                            <p class="text-xs text-gray-400 line-clamp-2 leading-relaxed">${cake.desc || 'Handcrafted fresh cake made with premium ingredients.'}</p>
+                        </div>
+                    </div>
+
+                    <!-- Card Footer / Price & Order -->
+                    <div class="p-5 pt-0 flex items-center justify-between border-t border-zinc-800/60 mt-3">
+                        <div>
+                            <span class="text-[10px] text-gray-500 uppercase tracking-wider block">Starting From</span>
+                            <span class="text-brand-red font-bold font-heading text-lg">Rs. ${Number(cake.price).toLocaleString()}</span>
+                        </div>
+
+                        <button onclick="orderViaWhatsApp('${cake.title}', ${cake.price})" class="px-4 py-2 rounded-lg bg-zinc-800 hover:bg-brand-red text-white text-xs font-semibold transition-all flex items-center gap-1.5 hover:shadow-lg hover:shadow-brand-red/30">
+                            <i class="fa-brands fa-whatsapp text-emerald-400 text-sm"></i>
+                            <span>Order</span>
+                        </button>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Filter Cakes
+        function filterCakes(cat) {
+            document.querySelectorAll('.category-btn').forEach(btn => {
+                btn.classList.remove('bg-brand-red', 'text-white', 'shadow-lg');
+                btn.classList.add('bg-zinc-900', 'text-gray-300');
+            });
+
+            event.target.classList.remove('bg-zinc-900', 'text-gray-300');
+            event.target.classList.add('bg-brand-red', 'text-white', 'shadow-lg');
+
+            if (cat === 'all') {
+                renderCakeGrid(cakesData);
+            } else {
+                const filtered = cakesData.filter(c => c.category === cat);
+                renderCakeGrid(filtered);
+            }
+        }
+
+        // Handle Local File Preview (Base64 conversion)
+        function previewLocalImage(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(evt) {
+                    currentLocalImageBase64 = evt.target.result;
+                    document.getElementById('image-preview-img').src = currentLocalImageBase64;
+                    document.getElementById('image-preview-container').classList.remove('hidden');
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        // Save / Add / Edit Cake Item in Admin Panel
+        function saveCakeItem(e) {
+            e.preventDefault();
+
+            const editId = document.getElementById('edit-cake-id').value;
+            const title = document.getElementById('admin-cake-title').value;
+            const category = document.getElementById('admin-cake-category').value;
+            const price = parseFloat(document.getElementById('admin-cake-price').value);
+            const badge = document.getElementById('admin-cake-badge').value;
+            const urlInput = document.getElementById('admin-cake-url').value;
+            const desc = document.getElementById('admin-cake-desc').value;
+
+            // Image Prioritizing: Local File Base64 -> URL -> Fallback
+            let finalImg = 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&q=80&w=800';
+            if (currentLocalImageBase64) {
+                finalImg = currentLocalImageBase64;
+            } else if (urlInput.trim() !== '') {
+                finalImg = urlInput.trim();
+            }
+
+            if (editId) {
+                // Update Existing
+                const index = cakesData.findIndex(c => c.id === editId);
+                if (index !== -1) {
+                    cakesData[index] = {
+                        ...cakesData[index],
+                        title, category, price, badge, desc,
+                        image: currentLocalImageBase64 || urlInput || cakesData[index].image
+                    };
+                    showToast('Cake updated successfully!');
+                }
+            } else {
+                // Add New
+                const newItem = {
+                    id: 'cake-' + Date.now(),
+                    title, category, price, badge, desc,
+                    image: finalImg
+                };
+                cakesData.unshift(newItem);
+                showToast('New cake added to website!');
+            }
+
+            saveToStorage();
+            renderCakeGrid(cakesData);
+            renderAdminTable();
+            resetAdminForm();
+        }
+
+        // Edit Cake Item
+        function editCake(id) {
+            const cake = cakesData.find(c => c.id === id);
+            if (!cake) return;
+
+            document.getElementById('edit-cake-id').value = cake.id;
+            document.getElementById('admin-cake-title').value = cake.title;
+            document.getElementById('admin-cake-category').value = cake.category;
+            document.getElementById('admin-cake-price').value = cake.price;
+            document.getElementById('admin-cake-badge').value = cake.badge || '';
+            document.getElementById('admin-cake-desc').value = cake.desc || '';
+            document.getElementById('admin-cake-url').value = cake.image.startsWith('data:') ? '' : cake.image;
+
+            document.getElementById('form-title').innerText = 'Edit Cake Variety';
+            showToast('Editing: ' + cake.title);
+        }
+
+        // Delete Cake Item
+        function deleteCake(id) {
+            if (confirm('Are you sure you want to remove this cake from your website?')) {
+                cakesData = cakesData.filter(c => c.id !== id);
+                saveToStorage();
+                renderCakeGrid(cakesData);
+                renderAdminTable();
+                showToast('Cake removed!');
+            }
+        }
+
+        // Reset Admin Form
+        function resetAdminForm() {
+            document.getElementById('cake-admin-form').reset();
+            document.getElementById('edit-cake-id').value = '';
+            document.getElementById('form-title').innerText = 'Add New Cake Variety';
+            document.getElementById('image-preview-container').classList.add('hidden');
+            currentLocalImageBase64 = '';
+        }
+
+        // Render Admin Table
+        function renderAdminTable() {
+            const tbody = document.getElementById('admin-cake-table-body');
+            tbody.innerHTML = '';
+
+            cakesData.forEach(cake => {
+                const tr = document.createElement('tr');
+                tr.className = 'hover:bg-zinc-900/50 transition-colors';
+                tr.innerHTML = `
+                    <td class="p-3">
+                        <img src="${cake.image}" class="w-10 h-10 object-cover rounded-lg border border-zinc-800">
+                    </td>
+                    <td class="p-3 font-semibold text-white">${cake.title}</td>
+                    <td class="p-3 uppercase text-[10px] text-gray-400">${cake.category}</td>
+                    <td class="p-3 text-brand-red font-bold">Rs. ${Number(cake.price).toLocaleString()}</td>
+                    <td class="p-3 text-right space-x-2">
+                        <button onclick="editCake('${cake.id}')" class="px-2.5 py-1 bg-zinc-800 hover:bg-zinc-700 text-gray-300 rounded text-[11px]"><i class="fa-solid fa-pen"></i></button>
+                        <button onclick="deleteCake('${cake.id}')" class="px-2.5 py-1 bg-red-950/80 hover:bg-brand-red text-red-300 hover:text-white rounded text-[11px]"><i class="fa-solid fa-trash"></i></button>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        // Calculator Logic
+        function calculateCakePrice() {
+            const ratePerKg = parseFloat(document.getElementById('calc-flavor').value);
+            const weight = parseFloat(document.getElementById('calc-weight').value);
+            document.getElementById('calc-weight-val').innerText = weight + ' KG';
+
+            const total = (ratePerKg * weight) + currentAddTierPrice;
+            document.getElementById('calc-total').innerText = 'Rs. ' + total.toLocaleString('en-US', {minimumFractionDigits: 2});
+        }
+
+        function setCalcTier(extraPrice, btn) {
+            currentAddTierPrice = extraPrice;
+            document.querySelectorAll('.tier-btn').forEach(b => {
+                b.classList.remove('bg-brand-red', 'text-white');
+                b.classList.add('bg-zinc-900', 'text-gray-300');
+            });
+            btn.classList.remove('bg-zinc-900', 'text-gray-300');
+            btn.classList.add('bg-brand-red', 'text-white');
+            calculateCakePrice();
+        }
+
+        function orderCalculatedCake() {
+            const weight = document.getElementById('calc-weight').value;
+            const flavor = document.getElementById('calc-flavor').options[document.getElementById('calc-flavor').selectedIndex].text;
+            const total = document.getElementById('calc-total').innerText;
+
+            const msg = `Hi Upeksha Cake! I calculated a custom price on your website:\n\n🍰 Flavor: ${flavor}\n⚖️ Weight: ${weight} KG\n💰 Estimated Price: ${total}\n\nI would like to place this order!`;
+            window.open(`https://wa.me/94771234567?text=${encodeURIComponent(msg)}`, '_blank');
+        }
+
+        // WhatsApp Direct Order for Cards
+        function orderViaWhatsApp(title, price) {
+            const msg = `Hi Upeksha Cake! I am interested in ordering the "${title}" (Rs. ${price.toLocaleString()}) from your website. Please let me know available dates!`;
+            window.open(`https://wa.me/94771234567?text=${encodeURIComponent(msg)}`, '_blank');
+        }
+
+        // Contact Form Direct Submission
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('cust-name').value;
+            const phone = document.getElementById('cust-phone').value;
+            const date = document.getElementById('cust-date').value;
+            const occasion = document.getElementById('cust-occasion').value;
+            const msg = document.getElementById('cust-msg').value;
+
+            const fullMsg = `Hi Upeksha Cake, New Inquiry from Website:\n\n👤 Name: ${name}\n📞 Phone: ${phone}\n📅 Date: ${date}\n🎉 Occasion: ${occasion}\n📝 Details: ${msg}`;
+            window.open(`https://wa.me/94771234567?text=${encodeURIComponent(fullMsg)}`, '_blank');
+        }
+
+        // UI Helpers
+        function toggleAdminPanel() {
+            const modal = document.getElementById('admin-modal');
+            modal.classList.toggle('hidden');
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-msg').innerText = msg;
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
